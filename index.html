@@ -5,18 +5,19 @@
 <title>Coming Soon...</title>
 
 <style>
-  body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: serif;
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: serif;
 
-    background-image: url("background.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  /* BACKGROUND IMAGE */
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   }
 
   #date {
@@ -40,7 +41,7 @@
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
   }
 
-  const start = new Date(2026, 02, 16);
+  const start = new Date(2026, 0, 16);
   const end   = new Date(2030, 11, 31);
 
   const date = randomDate(start, end);
