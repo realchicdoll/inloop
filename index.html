@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Coming Soon</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    font-family: serif;
+  }
+
+  #date {
+    font-size: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="date"></div>
+
+<script>
+  function randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  }
+
+  const start = new Date(2026, 01, 16);
+  const end   = new Date(2030, 11, 31);
+
+  const date = randomDate(start, end);
+
+  const options = { day: '2-digit', month: 'long', year: 'numeric' };
+  document.getElementById("date").innerText =
+    date.toLocaleDateString('en-GB', options);
+</script>
+
+</body>
+</html>
