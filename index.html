@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Coming Soon</title>
+<title>Coming Soon...</title>
 
 <style>
   body {
@@ -11,14 +11,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
     font-family: serif;
+
+    background-image: url("background.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   #date {
     font-size: 24px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+
+    background: rgba(255,255,255,0.7);
+    padding: 20px 30px;
+    backdrop-filter: blur(4px);
   }
 </style>
 </head>
@@ -32,7 +40,7 @@
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
   }
 
-  const start = new Date(2026, 01, 16);
+  const start = new Date(2026, 02, 16);
   const end   = new Date(2030, 11, 31);
 
   const date = randomDate(start, end);
