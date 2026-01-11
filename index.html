@@ -8,51 +8,72 @@
 body {
   margin: 0;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: serif;
-
-  /* BACKGROUND IMAGE */
   background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
 
-  #date {
-  font-size: 24px;
+
+#welcome-text {
+  font-size: 36px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 30px;          
+  
+  background: rgba(0,0,0,0.4);  
+  padding: 15px 25px;
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
+  z-index: 2;
+}
+
+/* DATA SOTTO IL TESTO */
+#date {
+  font-size: 28px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  color: white;
 
-  /* Sfondo semi-trasparente */
-  background: rgba(255, 255, 255, 0.5); /* bianco trasparente al 50% */
-
-  padding: 20px 30px;
-
-  /* Blur per effetto elegante */
-  backdrop-filter: blur(4px);
-  }
+  background: rgba(0,0,0,0.3);
+  padding: 10px 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
+  z-index: 2;
+}
 </style>
 </head>
 
 <body>
 
+<div id="welcome-text">
+  WE'RE SO GLAD TO HAVE YOU HERE.<br>
+  ARE YOU READY?
+</div>
+
 <div id="date"></div>
 
 <script>
-  function randomDate(start, end) {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-  }
+function randomDate(start, end) {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
 
-  const start = new Date(2026, 0, 16);
-  const end   = new Date(2030, 11, 31);
+const start = new Date(2026, 0, 16);
+const end   = new Date(2030, 11, 31);
 
-  const date = randomDate(start, end);
+const date = randomDate(start, end);
 
-  const options = { day: '2-digit', month: 'long', year: 'numeric' };
-  document.getElementById("date").innerText =
-    date.toLocaleDateString('en-GB', options);
+const options = { day: '2-digit', month: 'long', year: 'numeric' };
+document.getElementById("date").innerText =
+  date.toLocaleDateString('en-GB', options);
 </script>
 
 </body>
